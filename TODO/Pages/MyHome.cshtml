@@ -1,0 +1,22 @@
+﻿@page
+@model TODOS.Pages.MyHomeModel
+@{
+	ViewData["Title"] = "Todos";
+}
+<form method="post">
+	<h5>Title</h5>
+	<input type="text" name="title" required />
+	<br />
+	<h5>Content</h5>
+	<input type="text" name="content" required />
+	<br />
+	<input type="submit" value="Create" />
+</form>
+
+<h1>Todos</h1>
+@foreach (var todo in Model.Todos)
+{
+	<h2>@todo.Title</h2>
+	<h2>@todo.Content</h2>
+	<h2>@(todo.Status ? "Completed" : "Uncompleted")</h2>
+}

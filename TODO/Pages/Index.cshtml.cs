@@ -1,13 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace TODO.Pages
+namespace TODOS.Pages
 {
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-
-        public string Message { get; private set; } = "Hello, world";
-        public uint counter;
 
         public IndexModel(ILogger<IndexModel> logger)
         {
@@ -16,8 +14,10 @@ namespace TODO.Pages
 
         public void OnGet()
         {
-            counter++;
-            Message = $"{counter}";
+
+        }
+        public void OnPost()
+        {
         }
     }
 }
